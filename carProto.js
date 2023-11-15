@@ -7,15 +7,16 @@ class Car {
     constructor(model) {
         this.model = model;
         this.currentSpeed = 0;
-
-        this.accelerate = () => {
-            this.currentSpeed++;
-        }
-
-        this.brake = () => {
-            this.currentSpeed--;
-        }
     }
+
+    accelerate() {
+        this.currentSpeed++;
+    }
+
+    brake() {
+        this.currentSpeed--;
+    }
+
     toString() {
         return `${this.model} is going ${this.currentSpeed}`;
     }
@@ -33,5 +34,24 @@ console.log(geo.toString());
  * @constructor
  * @param {String} model
  */
+class ElectricCar extends Car {
+    constructor(model) {
+        super(model);
+        this.motor = 'electric';
+    }
 
+    accelerate() {
+        super.accelerate();
+        super.accelerate();
+    }
+
+    toString() {
+        return super.toString() + ` and has an ${this.motor} motor`;
+    }
+}
 //  Create an instance, accelerate twice, brake once, and console log the instance.toString()
+const prius = new ElectricCar('Prius');
+prius.accelerate();
+prius.accelerate();
+prius.brake();
+console.log(prius.toString());
