@@ -9,6 +9,11 @@ $main.click(function(e) {
 /**
  * Delete element when delete link clicked
  */
+$main.click(function(e) {
+  if(e.target.classList.contains('delete')) {
+    e.target.parentElement.remove();
+  } 
+});
 
 /**
  * Adds new list item to <ul>
