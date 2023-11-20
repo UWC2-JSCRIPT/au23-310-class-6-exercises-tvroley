@@ -21,12 +21,17 @@ const addListItem = function(e) {
 
   // rest here...
   const $li = $('<li>');
-  $li.text(text);
+  const $span = $('<span>');
+  $span.text(text);
+  $li.append($span);
+  $li.click(function(e) {
+    $li.toggleClass('done');
+  });
   const $a = $('<a>');
   $a.text('Delete');
   $a.addClass('delete');
   $a.click(function(e) {
-    $(this).parent().remove();
+    $a.parent().remove();
   });
   $li.append($a);
   const $ul = $('ul');
