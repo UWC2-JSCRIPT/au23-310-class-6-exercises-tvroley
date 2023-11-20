@@ -1,6 +1,10 @@
 /**
  * Toggles "done" class on <li> element
  */
+const $main = $('main');
+$main.click(function(e) {
+  e.target.classList.toggle('done');
+});
 
 /**
  * Delete element when delete link clicked
