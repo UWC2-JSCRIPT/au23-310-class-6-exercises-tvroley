@@ -22,6 +22,10 @@ const addListItem = function(e) {
   // rest here...
   const $li = $('<li>');
   $li.text(text);
+  const $a = $('<a>');
+  $a.text('Delete');
+  $a.addClass('delete');
+  $li.append($a);
   const $ul = $('ul');
   $ul.append($li);
 };
