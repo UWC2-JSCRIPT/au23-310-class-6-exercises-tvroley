@@ -25,6 +25,9 @@ const addListItem = function(e) {
   const $a = $('<a>');
   $a.text('Delete');
   $a.addClass('delete');
+  $a.click(function(e) {
+    $(this).parent().remove();
+  });
   $li.append($a);
   const $ul = $('ul');
   $ul.append($li);
