@@ -1,18 +1,15 @@
 /**
  * Toggles "done" class on <li> element
  */
-const $main = $('main');
-$main.click(function(e) {
-  e.target.classList.toggle('done');
+$('li').click(function(e) {
+  $(this).toggleClass('done');
 });
 
 /**
  * Delete element when delete link clicked
  */
-$main.click(function(e) {
-  if(e.target.classList.contains('delete')) {
-    e.target.parentElement.remove();
-  } 
+$('.delete').click(function(e) {
+  $(this).parent().remove();
 });
 
 /**
