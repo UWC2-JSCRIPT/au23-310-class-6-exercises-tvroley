@@ -20,6 +20,11 @@ const addListItem = function(e) {
   const text = $('input').val();
 
   // rest here...
+  const $li = $('<li>');
+  $li.text(text);
+  const $ul = $('ul');
+  $ul.append($li);
 };
 
 // add listener for add
+$('.add-item').click((e) => {addListItem(e);});
