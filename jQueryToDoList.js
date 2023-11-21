@@ -10,7 +10,8 @@ $( document ).ready(function() {
    * Delete element when delete link clicked
    */
   $('.delete').click(function(e) {
-    $(this).parent().remove();
+    e.stopPropagation();
+    $(this).parent().fadeOut('slow', function(){});
   });
 
   /**
@@ -32,7 +33,8 @@ $( document ).ready(function() {
     $a.text('Delete');
     $a.addClass('delete');
     $a.click(function(e) {
-      $a.parent().remove();
+      e.stopPropagation();
+      $a.parent().fadeOut('slow', function(){});
     });
     $li.append($a);
     const $ul = $('ul');
